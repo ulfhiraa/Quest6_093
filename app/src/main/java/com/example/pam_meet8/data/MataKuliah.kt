@@ -10,3 +10,4 @@ object MataKuliah {
         "Logika Teknik Pemrograman"
     )
 }
+// menambahkan objek mata kuliah dropdown yang dapat dipilih
