@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Notifications
 import androidx.compose.material3.AlertDialogDefaults.shape
@@ -92,6 +93,19 @@ fun RencanaStudyView(
                     tint = Color.White // agar ikon berwarna putih
                 )
             }
+        }
+        Box(
+            modifier = Modifier
+                .background(
+                    color = Color.White,
+                    shape = RoundedCornerShape( // bentuk bulat
+                        topEnd = 15.dp, //sudut kanan atas
+                        topStart = 15.dp // sudut kiri atas
+                    )
+                )
+                .fillMaxSize(),
+        ){
+
         }
     }
 }
