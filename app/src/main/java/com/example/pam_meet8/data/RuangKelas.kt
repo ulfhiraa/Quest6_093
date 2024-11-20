@@ -1,7 +1,7 @@
 package com.example.pam_meet8.data
 
 object RuangKelas {
-    val lisKelas= listOf(
+    val listKelas= listOf(
         "A",
         "B",
         "C",

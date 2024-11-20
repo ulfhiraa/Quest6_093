@@ -1,8 +1,10 @@
 package com.example.pam_meet8.ui.screen
 
 import android.os.strictmode.UntaggedSocketViolation
+import android.widget.Space
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -18,6 +20,7 @@ import androidx.compose.material.icons.filled.Notifications
 import androidx.compose.material3.AlertDialogDefaults.shape
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
+import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -36,6 +39,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.pam_meet8.R
 import com.example.pam_meet8.data.MataKuliah
+import com.example.pam_meet8.data.RuangKelas
 import com.example.pam_meet8.model.Mahasiswa
 import com.example.pam_meet8.model.RencanaStudy
 import com.example.pam_meet8.ui.widget.DynamicSelectedTextField
@@ -138,7 +142,21 @@ fun RencanaStudyView(
                     fontSize = 12.sp,
                     fontWeight = FontWeight.Light
                 )
-
+                Spacer(modifier = Modifier.padding(8.dp))
+                Row (
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceEvenly // agar layout menjadi simetris dan teratur
+                ){
+                    RuangKelas.listKelas.forEach { data ->
+                        Row (verticalAlignment = Alignment.CenterVertically) {
+                            RadioButton(
+                                selected = pilihanKelas == data,
+                                onClick = { pilihanKelas = data }
+                            )
+                            Text(data)
+                        }
+                    }
+                }
             }
         }
     }
