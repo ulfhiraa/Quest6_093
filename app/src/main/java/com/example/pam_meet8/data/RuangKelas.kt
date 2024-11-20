@@ -7,4 +7,4 @@ object RuangKelas {
         "C",
         "D",
     )
-}
+} // objek ruang kelas yang dapat dipilih dengan radio button
