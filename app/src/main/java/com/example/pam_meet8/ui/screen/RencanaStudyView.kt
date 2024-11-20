@@ -183,11 +183,11 @@ fun RencanaStudyView(
                     horizontalArrangement = Arrangement.SpaceEvenly
                 ){
                     Button(onClick = {onBackButtonClicked}) {
-                        Text(text = "Kembali")
+                        Text(text = "Kembali") // ke halaman sebelumnya
                     }
                     Button(onClick = {onSubmitButtonClicked(listData)},
                         enabled = checked){
-                        Text(text = "Lanjut")
+                        Text(text = "Lanjut") // ke halaman berikutnya
                     }
                 }
             }
