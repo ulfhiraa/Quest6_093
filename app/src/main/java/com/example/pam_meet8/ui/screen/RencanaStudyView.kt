@@ -34,8 +34,10 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.pam_meet8.R
+import com.example.pam_meet8.data.MataKuliah
 import com.example.pam_meet8.model.Mahasiswa
 import com.example.pam_meet8.model.RencanaStudy
+import com.example.pam_meet8.ui.widget.DynamicSelectedTextField
 
 @Composable
 fun RencanaStudyView(
@@ -118,6 +120,14 @@ fun RencanaStudyView(
                     fontWeight = FontWeight.Light
                 )
                 Spacer(modifier = Modifier.padding(8.dp))
+                DynamicSelectedTextField( // komponen custom untuk menampilkan input teks dengan memilih nilai dari opsi yang disediakan
+                    selectedValue = chosenDropdown, // selectedValue : nilai yang dipilih dari dropdown, chosenDropdown :  variabel yang menyimpan nilai yg dipilih
+                    options = MataKuliah.options, // daftar opsi MK
+                    label = "Mata Kuliah", // label MK
+                    onValueChangeEvent = {
+                        chosenDropdown = it
+                    }
+                )
             }
         }
     }
