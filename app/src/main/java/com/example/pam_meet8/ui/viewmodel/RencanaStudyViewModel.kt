@@ -13,10 +13,13 @@ class RencanaStudyViewModel : ViewModel(){ // class turunan dari View Model
 
     fun setMataKuliah(mkPilihan: String){
         _krsState.update { stateMK -> stateMK.copy(namaMK = mkPilihan) }
-    // update untuk mengubah nilai yang ada di _krsState
+    // update untuk mengubah nilai MK yang ada di _krsState
     // _krsState.update memastikan bahwa perubahan nilai namaMK disalurkan ke _krsState
     // copy untuk membuat salinan dari objek RencanaStudy dan mengganti nilai namaMK dengan mkPilihan yang diberikan
     }
     // fungsi setMataKuliah untuk memperbarui nama MK dalam RencanaStudy dengan nilai yang diberikan mkPilihan
 
+    fun setKelas(kelasPIlihan: String){
+        _krsState.update { stateKelas -> stateKelas.copy(kelas = kelasPIlihan) }
+    } // fungsi untuk memperbarui pilihan kelas
 }
