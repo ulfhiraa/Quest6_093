@@ -21,7 +21,7 @@ import com.example.pam_meet8.R
 
 //@Preview(showBackground = true)
 @Composable
-fun SplashView() {
+fun SplashView(onMulaiButton: () -> Unit) {
     Column(modifier = Modifier
         .fillMaxSize()
         .background(
@@ -36,8 +36,9 @@ fun SplashView() {
         )
 
         Spacer(modifier = Modifier.padding(16.dp))
+
         Button(
-            onClick = {}
+            onClick = onMulaiButton // Memanggil fungsi navigasi saat tombol Mulai ditekan
         ) {
             Text("Mulai")
         }

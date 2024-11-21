@@ -38,6 +38,7 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.pam_meet8.R
@@ -168,7 +169,7 @@ fun RencanaStudyView(
                     Checkbox(
                         checked = checked, // status centang pada checkbox
                         onCheckedChange = {checked = it},
-                        enabled = chosenDropdown.isBlank() && pilihanKelas.isNotBlank()
+                        enabled = chosenDropdown.isNotBlank() && pilihanKelas.isNotBlank()
                     // Tombol checkbox akan diaktifkan atau dinonaktifkan sesuai dengan kondisi yang ditentukan oleh nilai chosenDropdown dan pilihanKelas.
                     )
                     Text(
@@ -182,11 +183,15 @@ fun RencanaStudyView(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.SpaceEvenly
                 ){
-                    Button(onClick = {onBackButtonClicked}) {
+                    Button(
+                        onClick = {onBackButtonClicked}
+                    ) {
                         Text(text = "Kembali") // ke halaman sebelumnya
                     }
-                    Button(onClick = {onSubmitButtonClicked(listData)},
-                        enabled = checked){
+                    Button(
+                        onClick = {onSubmitButtonClicked(listData)},
+                        enabled = checked
+                    ){
                         Text(text = "Lanjut") // ke halaman berikutnya
                     }
                 }
